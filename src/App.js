@@ -65,7 +65,7 @@ function App() {
       <h1>Metal Gear Solid Soundboard</h1>
       
       <div className="stage-section">
-        <h2>Stage Selection</h2>
+        <h2>Stage</h2>
         <StageSelector stages={soundboardData.stages} selectedStage={selectedStage} setSelectedStage={setSelectedStage} />
         <button 
           className="resume-button"
@@ -76,7 +76,7 @@ function App() {
       </div>
       
       <div className="override-section">
-        <h2>Stage Overrides</h2>
+        <h2>Triggers</h2>
         <OverrideButtons overrides={soundboardData['stage-overrides']} />
       </div>
       
