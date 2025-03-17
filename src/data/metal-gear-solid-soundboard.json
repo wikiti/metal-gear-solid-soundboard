@@ -12,7 +12,7 @@
       },
       {
         "id": "music-wind",
-        "src": "/music/wind.mp3"
+        "src": "./music/wind.mp3"
       },
       {
         "id": "music-duel",
