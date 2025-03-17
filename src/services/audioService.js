@@ -95,4 +95,6 @@ class AudioService {
   }
 }
 
-export default new AudioService();
+const defaultAudioService = new AudioService();
+
+export default defaultAudioService;
