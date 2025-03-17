@@ -1,0 +1,11 @@
+.stage-selector {
+  margin-bottom: 15px;
+}
+
+.stage-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

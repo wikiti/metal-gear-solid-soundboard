@@ -1,0 +1,105 @@
+{
+  "sources": {
+    "music": [
+      {
+        "id": "music-cavern",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/04.%20Cavern.mp3"
+      },
+      {
+        "id": "music-encounter",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/06.%20Encounter.mp3",
+        "preload": true
+      },
+      {
+        "id": "music-wind",
+        "src": "/music/wind.mp3"
+      },
+      {
+        "id": "music-duel",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/12.%20Duel.mp3"
+      }
+    ],
+    "sounds": [
+      {
+        "id": "sound-alert",
+        "src": "https://www.myinstants.com/media/sounds/tindeck_1.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-codec",
+        "src": "https://www.myinstants.com/media/sounds/codec.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-gameover",
+        "src": "https://www.myinstants.com/media/sounds/snake-dies-with-game-over.mp3",
+        "preload": true
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "stage1",
+      "label": "Stage 1 - Dock",
+      "music": "music-cavern"
+    },
+    {
+      "id": "stage2",
+      "label": "Stage 2 - Heliport",
+      "music": "music-wind"
+    },
+    {
+      "id": "wip-boss",
+      "label": "[WIP] Boss stage",
+      "music": "music-duel"
+    }
+  ],
+  "stage-overrides": [
+    {
+      "id": "override-alert",
+      "label": "❗ Trigger alert",
+      "play": [
+        {
+          "id": "sound-alert",
+          "delay": 0
+        },
+        {
+          "id": "music-encounter",
+          "delay": 0.3
+        }
+      ]
+    },
+    {
+      "id": "override-gameover",
+      "label": "💀 Trigger Game Over",
+      "play": [
+        {
+          "id": "sound-gameover",
+          "delay": 0
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "id": "sfx-codec",
+      "label": "📞 Codec",
+      "play": [
+        {
+          "id": "sound-codec",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-alert",
+      "label": "❗ Alert",
+      "play": [
+        {
+          "id": "sound-alert",
+          "delay": 0
+        }
+      ]
+    }
+  ]
+}

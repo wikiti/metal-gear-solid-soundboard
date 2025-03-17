@@ -1,0 +1,101 @@
+.settings-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+.settings-toggle {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #bebebe;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.settings-toggle:hover {
+  background-color: #919191;
+}
+
+.settings-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.settings-warning {
+  color: #e74c3c;
+  margin-bottom: 15px;
+  padding: 8px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.json-editor {
+  width: 100%;
+  font-family: monospace;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.validation-error {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 4px;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.settings-save, .settings-reload, .settings-reset, .settings-close {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.settings-save {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.settings-save:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.settings-reload {
+  background-color: #3498db;
+  color: white;
+}
+
+.settings-close {
+  background-color: #3498db;
+  color: white;
+}
+
+.settings-reset {
+  background-color: #e74c3c;
+  color: white;
+  margin-left: auto;
+}

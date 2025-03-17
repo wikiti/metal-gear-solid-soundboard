@@ -1,23 +1,107 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import StageSelector from './components/StageSelector/StageSelector';
+import OverrideButtons from './components/OverrideButtons/OverrideButtons';
+import SfxButtons from './components/SfxButtons/SfxButtons';
+import SettingsButton from './components/SettingsButton/SettingsButton';
+import audioService from './services/audioService';
 import './App.css';
 
 function App() {
+  const [soundboardData, setSoundboardData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedStage, setSelectedStage] = useState('');
+
+  useEffect(() => {
+    // Try to load from localStorage first
+    const savedData = localStorage.getItem('mgs-soundboard-data');
+    
+    if (savedData) {
+      try {
+        const parsedData = JSON.parse(savedData);
+        setSoundboardData(parsedData);
+        audioService.loadSounds(parsedData);
+        setLoading(false);
+      } catch (err) {
+        console.error('Failed to parse saved data, loading default', err);
+        loadDefaultData();
+      }
+    } else {
+      loadDefaultData();
+    }
+  }, []);
+
+  const loadDefaultData = () => {
+    import('./data/metal-gear-solid-soundboard.json')
+      .then(data => {
+        setSoundboardData(data.default);
+        audioService.loadSounds(data.default);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError('Failed to load soundboard data');
+        console.error(err);
+        setLoading(false);
+      });
+  };
+
+  const handleUpdateData = (newData) => {
+    // Update state with new data
+    setSoundboardData(newData);
+    
+    // Save to localStorage
+    localStorage.setItem('mgs-soundboard-data', JSON.stringify(newData));
+    
+    // Reload audio service with new data
+    audioService.loadSounds(newData);
+  };
+
+  if (loading) return <div className="loading">Loading soundboard...</div>;
+  if (error) return <div className="error">{error}</div>;
+  if (!soundboardData) return null;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="soundboard-container">
+      <h1>Metal Gear Solid Soundboard</h1>
+      
+      <div className="stage-section">
+        <h2>Stage Selection</h2>
+        <StageSelector stages={soundboardData.stages} selectedStage={selectedStage} setSelectedStage={setSelectedStage} />
+        <button 
+          className="resume-button"
+          onClick={() => audioService.playStage(selectedStage, soundboardData.stages)}
         >
-          Learn React
-        </a>
-      </header>
+          Restart
+        </button>
+      </div>
+      
+      <div className="override-section">
+        <h2>Stage Overrides</h2>
+        <OverrideButtons overrides={soundboardData['stage-overrides']} />
+      </div>
+      
+      <div className="sfx-section">
+        <h2>Sound Effects</h2>
+        <SfxButtons sfxList={soundboardData.sfx} />
+      </div>
+
+      <div className="settings-wrapper">
+        <SettingsButton
+          soundboardData={soundboardData}
+          onUpdateData={handleUpdateData}
+        />
+      </div>
+
+      <div className="disclaimer">
+        <p>
+          <strong>Disclaimer:</strong> This soundboard does not store or host any audio files on this server. 
+          All sounds are streamed directly from external sources (archives, etc). 
+          This app is designed for personal use during tabletop gaming sessions and 
+          operates as a reference tool only. All Metal Gear Solid audio content, 
+          characters, and related media are property of Konami. 
+          This is an unofficial fan project not affiliated with or endorsed by Konami.
+        </p>
+      </div>
     </div>
   );
 }
