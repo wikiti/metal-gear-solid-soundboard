@@ -2,6 +2,7 @@
   "name": "metal-gear-solid-cmon-soundboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wikiti.github.io/metal-gear-solid-soundboard",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
