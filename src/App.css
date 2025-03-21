@@ -55,7 +55,7 @@ h2 {
   margin: 10px 0 20px;
   padding: 10px 15px;
   background-color: rgba(0, 0, 0, 0.05);
-  border-left: 3px solid #e2a54a;
+  border-left: 3px solid #4a91e2;
   border-radius: 4px;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -64,4 +64,8 @@ h2 {
 
 .disclaimer strong {
   color: #333;
+}
+
+.disclaimer.warning {
+  border-left: 3px solid #e2a54a;
 }

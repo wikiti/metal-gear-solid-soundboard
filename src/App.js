@@ -92,7 +92,7 @@ function App() {
         />
       </div>
 
-      <div className="disclaimer">
+      <div className="disclaimer warning">
         <p>
           <strong>Disclaimer:</strong> This soundboard does not store or host any audio files on this server. 
           All sounds are streamed directly from external sources (archives, etc). 
@@ -100,6 +100,12 @@ function App() {
           operates as a reference tool only. All Metal Gear Solid audio content, 
           characters, and related media are property of Konami. 
           This is an unofficial fan project not affiliated with or endorsed by Konami.
+        </p>
+      </div>
+
+      <div className="disclaimer">
+        <p>
+          This web app was developed by <a target="_blank" href="https://github.com/wikiti" rel="noreferrer">Daniel @wikiti</a>, with the help of <a target="_blank" href="https://boardgamegeek.com/user/Zypzu" rel="noreferrer">Eric @Zypzu</a> and other BGG community members.
         </p>
       </div>
     </div>
