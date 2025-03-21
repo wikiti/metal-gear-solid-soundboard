@@ -6,6 +6,7 @@ class AudioService {
     this.currentStage = null;
     this.previousStage = null;
     this.timeouts = [];
+    this.activeOverride = null; // Track active override
   }
 
   loadSounds(soundData) {
@@ -44,6 +45,9 @@ class AudioService {
     this.previousStage = this.currentStage;
     this.currentStage = stageId;
     
+    // Clear any active override
+    this.activeOverride = null;
+    
     // Play the stage music
     if (this.sounds[stage.music]) {
       this.sounds[stage.music].play();
@@ -55,6 +59,9 @@ class AudioService {
     this.stopAllMusic();
     this.clearTimeouts();
     
+    // Set this as the active override
+    this.activeOverride = override.id;
+    
     // Play each sound in the sequence with the specified delays
     override.play.forEach(sound => {
       const timeout = setTimeout(() => {
@@ -64,6 +71,9 @@ class AudioService {
       }, sound.delay * 1000);
       this.timeouts.push(timeout);
     });
+    
+    // If there's a natural end to this override sequence, clear it
+    // For now we'll assume the override stays active until manually cleared
   }
 
   playSfx(sfx) {
@@ -94,6 +104,33 @@ class AudioService {
   clearTimeouts() {
     this.timeouts.forEach(timeout => clearTimeout(timeout));
     this.timeouts = [];
+  }
+
+  // New method to check if buttons should be shown based on filters
+  isSfxAvailable(buttonFilters) {
+    if (!buttonFilters) return true;
+
+    let available = true;
+
+    if (buttonFilters.debug) {
+      console.log("buttonFilters", buttonFilters);
+      console.log("this.activeOverride", this.activeOverride);
+      console.log("buttonFilters.override.in", buttonFilters.override.in);
+      console.log("buttonFilters.override.not_in", buttonFilters.override.not_in);
+    }
+
+    if (buttonFilters.override.in) {
+      available &&= this.activeOverride != null && buttonFilters.override.in.includes(this.activeOverride);
+    }
+    if (buttonFilters.override.not_in) {
+      available &&= this.activeOverride == null || !buttonFilters.override.not_in.includes(this.activeOverride);
+    }
+
+    if (buttonFilters.debug) {
+      console.log("available", available);
+    }
+
+    return available;
   }
 }
 

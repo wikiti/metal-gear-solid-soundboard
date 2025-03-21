@@ -203,7 +203,7 @@
       "category": "Guards",
       "label": "👮‍♂️❗",
       "show_if": {
-        "override": "override-alert"
+        "override": { "in": ["override-alert"] }
       },
       "play": [
         {
@@ -216,6 +216,9 @@
       "id": "sfx-guard-return-to-your-positions",
       "category": "Guards",
       "label": "👮‍♂️🔊 Return to your positions",
+      "show_if": {
+        "override": { "not_in": ["override-alert"] }
+      },
       "play": [
         {
           "id": "sound-guard-return-to-your-positions",
@@ -227,6 +230,9 @@
       "id": "sfx-guard-what-was-that-noise",
       "category": "Guards",
       "label": "👮‍♂️❔ What was that noise?",
+      "show_if": {
+        "override": { "not_in": ["override-alert"] }
+      },
       "play": [
         {
           "id": "sound-guard-what-was-that-noise",
@@ -238,6 +244,9 @@
       "id": "sfx-guard-i-heard-something",
       "category": "Guards",
       "label": "👮❔‍ I heard something",
+      "show_if": {
+        "override": { "not_in": ["override-alert"] }
+      },
       "play": [
         {
           "id": "sound-guard-i-heard-something",
@@ -250,7 +259,7 @@
       "category": "Guards",
       "label": "👮‍♂️❗ Eat this!",
       "show_if": {
-        "override": "override-alert"
+        "override": { "in": ["override-alert"] }
       },
       "play": [
         {
@@ -264,7 +273,7 @@
       "category": "Guards",
       "label": "👮‍♂️❗🔊 There he is!",
       "show_if": {
-        "override": "override-alert"
+        "override": { "in": ["override-alert"] }
       },
       "play": [
         {
@@ -278,7 +287,7 @@
       "category": "Guards",
       "label": "👮‍♂️❗🔊 This way!",
       "show_if": {
-        "override": "override-alert"
+        "override": { "in": ["override-alert"] }
       },
       "play": [
         {
@@ -290,9 +299,9 @@
     {
       "id": "sfx-guard-whats-that",
       "category": "Guards",
-      "label": "👮‍♂️❗ What's that?",
+      "label": "👮‍♂️❔ What's that?",
       "show_if": {
-        "override": "override-alert"
+        "override": { "not_in": ["override-alert"] }
       },
       "play": [
         {
@@ -305,7 +314,7 @@
       "id": "sfx-guard-whered-he-go",
       "category": "Guards",
       "show_if": {
-        "override": "override-alert"
+        "override": { "in": ["override-alert"] }
       },
       "label": "👮‍♂️❗ Where'd he go?",
       "play": [
@@ -319,7 +328,7 @@
       "id": "sfx-guard-whos-that",
       "label": "👮‍♂️❗ Who's that?",
       "show_if": {
-        "override": "override-alert"
+        "override": { "in": ["override-alert"] }
       },
       "play": [
         {
