@@ -6,6 +6,10 @@ https://wikiti.github.io/metal-gear-solid-soundboard
 
 The app was mainly built using GitHub Copilot since I didn't want to over engineer this simple project.
 
+## TODO
+
+- Create `show_if` conditionals for some stages (e.g. prevent Alert overrides in boss fights or setup)
+
 ## Development
 
 This is a regular react app, so just check `package.json` for commands, and play around with it!

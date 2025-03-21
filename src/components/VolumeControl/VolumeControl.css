@@ -1,0 +1,45 @@
+.volume-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  width: 40%;
+  min-width: 200px;
+}
+
+.mute-button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+  color: #333;
+}
+
+.volume-slider {
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #d3d3d3;
+  outline: none;
+  flex-grow: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4a4a4a;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4a4a4a;
+  cursor: pointer;
+}

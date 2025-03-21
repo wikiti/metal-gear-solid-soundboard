@@ -3,6 +3,7 @@ import StageSelector from './components/StageSelector/StageSelector';
 import OverrideButtons from './components/OverrideButtons/OverrideButtons';
 import SfxButtons from './components/SfxButtons/SfxButtons';
 import SettingsButton from './components/SettingsButton/SettingsButton';
+import VolumeControl from './components/VolumeControl/VolumeControl';
 import audioService from './services/audioService';
 import './App.css';
 
@@ -62,7 +63,10 @@ function App() {
 
   return (
     <div className="soundboard-container">
-      <h1>Metal Gear Solid Soundboard</h1>
+      <div className="header-container">
+        <h1>Metal Gear Solid Soundboard</h1>
+        <VolumeControl />
+      </div>
       
       <div className="stage-section">
         <h2>Stage</h2>

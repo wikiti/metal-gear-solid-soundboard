@@ -69,3 +69,9 @@ h2 {
 .disclaimer.warning {
   border-left: 3px solid #e2a54a;
 }
+
+.header-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

@@ -107,23 +107,23 @@
   },
   "stages": [
     {
-      "id": "setup",
-      "label": "Stage setup",
+      "id": "stage-setup",
+      "label": "Setup stage",
       "music": "music-introduction"
     },
     {
-      "id": "stage1",
+      "id": "stage-1",
       "label": "Stage 1 - Dock",
       "music": "music-cavern"
     },
     {
-      "id": "stage2",
+      "id": "stage-2",
       "label": "Stage 2 - Heliport",
       "music": "music-wind"
     },
     {
-      "id": "wip-boss",
-      "label": "[WIP] Boss stage",
+      "id": "stage-boss",
+      "label": "Boss",
       "music": "music-duel"
     }
   ],

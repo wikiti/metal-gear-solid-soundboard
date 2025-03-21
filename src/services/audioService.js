@@ -1,4 +1,4 @@
-import { Howl } from 'howler';
+import { Howl, Howler } from 'howler';
 
 class AudioService {
   constructor() {
@@ -6,7 +6,42 @@ class AudioService {
     this.currentStage = null;
     this.previousStage = null;
     this.timeouts = [];
-    this.activeOverride = null; // Track active override
+    this.activeOverride = null;
+    
+    // Volume control properties
+    this.masterVolume = localStorage.getItem('mgs-master-volume') || 1.0;
+    this.isMuted = localStorage.getItem('mgs-muted') === 'true' || false;
+    this.previousVolume = this.masterVolume; // Store volume for unmute
+    
+    // Initialize Howler master volume
+    this.applyMasterVolume();
+  }
+
+  // Apply the current volume setting to Howler global volume
+  applyMasterVolume() {
+    Howler.volume(this.isMuted ? 0 : this.masterVolume);
+  }
+  
+  // Set a new volume level (0 to 1)
+  setVolume(volume) {
+    this.masterVolume = volume;
+    this.previousVolume = volume;
+    localStorage.setItem('mgs-master-volume', volume);
+    this.applyMasterVolume();
+  }
+
+  setMute(isMuted) {
+    this.isMuted = isMuted;
+    localStorage.setItem('mgs-muted', isMuted);
+    this.applyMasterVolume();
+  }
+  
+  // Get current volume state
+  getVolumeState() {
+    return {
+      volume: this.masterVolume,
+      isMuted: this.isMuted
+    };
   }
 
   loadSounds(soundData) {
