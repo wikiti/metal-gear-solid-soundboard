@@ -4,6 +4,7 @@ import OverrideButtons from './components/OverrideButtons/OverrideButtons';
 import SfxButtons from './components/SfxButtons/SfxButtons';
 import SettingsButton from './components/SettingsButton/SettingsButton';
 import VolumeControl from './components/VolumeControl/VolumeControl';
+import ErrorToast from './components/ErrorToast/ErrorToast';
 import audioService from './services/audioService';
 import './App.css';
 
@@ -12,8 +13,14 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedStage, setSelectedStage] = useState('');
+  const [soundErrors, setSoundErrors] = useState([]);
 
   useEffect(() => {
+    // Register error listener
+    const unsubscribe = audioService.onError(error => {
+      setSoundErrors(prev => [...prev, { ...error, errorId: Date.now() }]);
+    });
+
     // Try to load from localStorage first
     const savedData = localStorage.getItem('mgs-soundboard-data');
     
@@ -30,6 +37,9 @@ function App() {
     } else {
       loadDefaultData();
     }
+
+    // Cleanup error listener on unmount
+    return unsubscribe;
   }, []);
 
   const loadDefaultData = () => {
@@ -55,6 +65,10 @@ function App() {
     
     // Reload audio service with new data
     audioService.loadSounds(newData);
+  };
+
+  const handleDismissError = (errorId) => {
+    setSoundErrors(prev => prev.filter(err => err.errorId !== errorId));
   };
 
   if (loading) return <div className="loading">Loading soundboard...</div>;
@@ -112,6 +126,8 @@ function App() {
           This web app was developed by <a target="_blank" href="https://github.com/wikiti" rel="noreferrer">Daniel @wikiti</a>, with the help of <a target="_blank" href="https://boardgamegeek.com/user/Zypzu" rel="noreferrer">Eric @Zypzu</a> and other BGG community members.
         </p>
       </div>
+
+      <ErrorToast errors={soundErrors} onDismiss={handleDismissError} />
     </div>
   );
 }

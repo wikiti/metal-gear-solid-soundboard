@@ -108,7 +108,7 @@
   "stages": [
     {
       "id": "stage-setup",
-      "label": "Setup stage",
+      "label": "Stage setup",
       "music": "music-introduction"
     },
     {

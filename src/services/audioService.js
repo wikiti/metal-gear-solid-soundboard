@@ -13,8 +13,25 @@ class AudioService {
     this.isMuted = localStorage.getItem('mgs-muted') === 'true' || false;
     this.previousVolume = this.masterVolume; // Store volume for unmute
     
+    // For error handling
+    this.errorListeners = [];
+    
     // Initialize Howler master volume
     this.applyMasterVolume();
+  }
+
+  // Error event subscription
+  onError(listener) {
+    this.errorListeners.push(listener);
+    return () => {
+      this.errorListeners = this.errorListeners.filter(l => l !== listener);
+    };
+  }
+
+  // Notify all listeners about an error
+  emitError(error) {
+    console.error(`Failed to load audio source '${error.id}'`, error);
+    this.errorListeners.forEach(listener => listener(error));
   }
 
   // Apply the current volume setting to Howler global volume
@@ -52,7 +69,10 @@ class AudioService {
         loop: true,
         preload: item.preload || false,
         html5: true,
-        volume: item.volume != null ? item.volume : 1.0
+        volume: item.volume != null ? item.volume : 1.0,
+        onloaderror: () => {
+          this.emitError({ type: 'music', ...item });
+        }
       });
     });
     
@@ -63,7 +83,10 @@ class AudioService {
         loop: false,
         preload: item.preload || false,
         html5: true,
-        volume: item.volume != null ? item.volume : 1.0
+        volume: item.volume != null ? item.volume : 1.0,
+        onloaderror: () => {
+          this.emitError({ type: 'sound', ...item });
+        }
       });
     });
   }
