@@ -3,15 +3,18 @@
     "music": [
       {
         "id": "music-introduction",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/02.%20Introduction.mp3"
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/02.%20Introduction.mp3",
+        "volume": 0.5
       },
       {
         "id": "music-cavern",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/04.%20Cavern.mp3"
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/04.%20Cavern.mp3",
+        "volume": 0.5
       },
       {
         "id": "music-encounter",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/06.%20Encounter.mp3",
+        "volume": 0.5,
         "preload": true
       },
       {
@@ -20,7 +23,8 @@
       },
       {
         "id": "music-duel",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/12.%20Duel.mp3"
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/12.%20Duel.mp3",
+        "volume": 0.5
       }
     ],
     "sounds": [
@@ -41,77 +45,62 @@
       },
       {
         "id": "sound-knock",
-        "src": "https://www.myinstants.com/media/sounds/knock-mgs.mp3",
+        "src": "https://www.myinstants.com/media/sounds/mgs-knock-a.mp3",
         "preload": true
       },
       {
         "id": "sound-punch-ko-x1",
-        "src": "https://www.myinstants.com/media/sounds/punch-guard-ko-x1.mp3",
+        "src": "https://www.myinstants.com/media/sounds/punch-guard-kox1.mp3",
         "preload": true
       },
       {
         "id": "sound-ko-x2",
-        "src": "https://www.myinstants.com/media/sounds/knock-out-guard-ko-x2.mp3",
-        "preload": true
-      },
-      {
-        "id": "sound-silent-takedown",
-        "src": "https://www.myinstants.com/media/sounds/silent-takedown.mp3",
-        "preload": true
-      },
-      {
-        "id": "sound-elevator",
-        "src": "https://www.myinstants.com/media/sounds/mgs-elevator-5.mp3",
+        "src": "https://www.myinstants.com/media/sounds/knock-out-guard-kox2.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-return-to-your-positions",
-        "src": "https://www.myinstants.com/media/sounds/guard-return-to-your-positions.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-return-to-your-positions_9aocsFp.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-what-was-that-noise",
-        "src": "https://www.myinstants.com/media/sounds/guard-what-was-that-noise.mp3",
-        "preload": true
-      },
-      {
-        "id": "sound-guard-huh",
-        "src": "https://www.myinstants.com/media/sounds/guard-huh.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-what-was-that-noise_IVtXtq7.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-i-heard-something",
-        "src": "https://www.myinstants.com/media/sounds/guard-i-heard-something.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-i-heard-something_SP0Q6Fw.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-eat-this",
-        "src": "https://www.myinstants.com/media/sounds/guard-eat-this.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-eat-this_r8zo9ce.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-there-he-is",
-        "src": "https://www.myinstants.com/media/sounds/guard-there-he-is.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-there-he-is_JHZ7rPO.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-this-way",
-        "src": "https://www.myinstants.com/media/sounds/guard-this-way.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-this-way_dYsTCuS.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-whats-that",
-        "src": "https://www.myinstants.com/media/sounds/guard-whats-that.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-whats-that_8vgwEbf.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-whered-he-go",
-        "src": "https://www.myinstants.com/media/sounds/guard-whered-he-go.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-whered-he-go_zHLpH97.mp3",
         "preload": true
       },
       {
         "id": "sound-guard-whos-that",
-        "src": "https://www.myinstants.com/media/sounds/guard-whos-that.mp3",
+        "src": "https://www.myinstants.com/media/sounds/guard-whos-that_x8gyPDo.mp3",
         "preload": true
       }
     ]
@@ -210,31 +199,12 @@
       ]
     },
     {
-      "id": "sfx-silent-takedown",
-      "category": "Combat",
-      "label": "👊💀 Silent Takedown",
-      "play": [
-        {
-          "id": "sound-silent-takedown",
-          "delay": 0
-        }
-      ]
-    },
-    {
-      "id": "sfx-elevator",
-      "category": "Interaction",
-      "label": "👉 Elevator",
-      "play": [
-        {
-          "id": "sound-elevator",
-          "delay": 0
-        }
-      ]
-    },
-    {
       "id": "sfx-alert",
       "category": "Guards",
       "label": "👮‍♂️❗",
+      "show_if": {
+        "override": "override-alert"
+      },
       "play": [
         {
           "id": "sound-alert",
@@ -265,17 +235,6 @@
       ]
     },
     {
-      "id": "sfx-guard-huh",
-      "category": "Guards",
-      "label": "👮‍♂️❔ Huh?",
-      "play": [
-        {
-          "id": "sound-guard-huh",
-          "delay": 0
-        }
-      ]
-    },
-    {
       "id": "sfx-guard-i-heard-something",
       "category": "Guards",
       "label": "👮❔‍ I heard something",
@@ -290,6 +249,9 @@
       "id": "sfx-guard-eat-this",
       "category": "Guards",
       "label": "👮‍♂️❗ Eat this!",
+      "show_if": {
+        "override": "override-alert"
+      },
       "play": [
         {
           "id": "sound-guard-eat-this",
@@ -301,6 +263,9 @@
       "id": "sfx-guard-there-he-is",
       "category": "Guards",
       "label": "👮‍♂️❗🔊 There he is!",
+      "show_if": {
+        "override": "override-alert"
+      },
       "play": [
         {
           "id": "sound-guard-there-he-is",
@@ -312,6 +277,9 @@
       "id": "sfx-guard-this-way",
       "category": "Guards",
       "label": "👮‍♂️❗🔊 This way!",
+      "show_if": {
+        "override": "override-alert"
+      },
       "play": [
         {
           "id": "sound-guard-this-way",
@@ -323,6 +291,9 @@
       "id": "sfx-guard-whats-that",
       "category": "Guards",
       "label": "👮‍♂️❗ What's that?",
+      "show_if": {
+        "override": "override-alert"
+      },
       "play": [
         {
           "id": "sound-guard-whats-that",
@@ -333,6 +304,9 @@
     {
       "id": "sfx-guard-whered-he-go",
       "category": "Guards",
+      "show_if": {
+        "override": "override-alert"
+      },
       "label": "👮‍♂️❗ Where'd he go?",
       "play": [
         {
@@ -344,6 +318,9 @@
     {
       "id": "sfx-guard-whos-that",
       "label": "👮‍♂️❗ Who's that?",
+      "show_if": {
+        "override": "override-alert"
+      },
       "play": [
         {
           "id": "sound-guard-whos-that",

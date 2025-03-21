@@ -15,7 +15,8 @@ class AudioService {
         src: [item.src],
         loop: true,
         preload: item.preload || false,
-        html5: true
+        html5: true,
+        volume: item.volume != null ? item.volume : 1.0
       });
     });
     
@@ -25,7 +26,8 @@ class AudioService {
         src: [item.src],
         loop: false,
         preload: item.preload || false,
-        html5: true
+        html5: true,
+        volume: item.volume != null ? item.volume : 1.0
       });
     });
   }
