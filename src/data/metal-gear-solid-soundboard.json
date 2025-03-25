@@ -25,6 +25,16 @@
         "id": "music-duel",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/12.%20Duel.mp3",
         "volume": 0.5
+      },
+      {
+        "id": "music-intruder-1",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/05.%20Intruder%201.mp3",
+        "volume": 0.5
+      },
+      {
+        "id": "music-intruder-2",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/07.%20Intruder%202.mp3",
+        "volume": 0.5
       }
     ],
     "sounds": [
@@ -122,6 +132,11 @@
       "music": "music-wind"
     },
     {
+      "id": "stage-3",
+      "label": "Stage 3 - Holding Cells",
+      "music": "music-intruder-1"
+    },
+    {
       "id": "stage-boss",
       "label": "Boss",
       "music": "music-duel"
@@ -135,6 +150,9 @@
         {
           "id": "sound-alert",
           "delay": 0
+        },
+        {
+          "comment": "TODO: Add a siren sfx here"
         },
         {
           "id": "music-encounter",
@@ -151,6 +169,32 @@
           "delay": 0
         }
       ]
+    },
+    {
+      "id": "override-board-5a",
+      "label": "🔊 5A - Holding Cells",
+      "play": [
+        {
+          "id": "music-intruder-1",
+          "delay": 0
+        }
+      ],
+      "show_if": {
+        "stage": { "in": ["stage-3"] }
+      }
+    },
+    {
+      "id": "override-board-6a",
+      "label": "🔊 6A - Armory",
+      "play": [
+        {
+          "id": "music-intruder-2",
+          "delay": 0
+        }
+      ],
+      "show_if": {
+        "stage": { "in": ["stage-3"] }
+      }
     }
   ],
   "sfx": [

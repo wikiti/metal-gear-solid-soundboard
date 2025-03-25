@@ -122,6 +122,10 @@ class AudioService {
     
     // Play each sound in the sequence with the specified delays
     override.play.forEach(sound => {
+      if (!sound.id) {
+        return;
+      }
+
       const timeout = setTimeout(() => {
         if (this.sounds[sound.id]) {
           this.sounds[sound.id].play();
@@ -165,27 +169,23 @@ class AudioService {
   }
 
   // New method to check if buttons should be shown based on filters
-  isSfxAvailable(buttonFilters) {
-    if (!buttonFilters) return true;
+  isAudioAvaible(filters) {
+    if (!filters) return true;
 
     let available = true;
 
-    if (buttonFilters.debug) {
-      console.log("buttonFilters", buttonFilters);
-      console.log("this.activeOverride", this.activeOverride);
-      console.log("buttonFilters.override.in", buttonFilters.override.in);
-      console.log("buttonFilters.override.not_in", buttonFilters.override.not_in);
+    if (filters?.override?.in) {
+      available &&= this.activeOverride != null && filters.override.in.includes(this.activeOverride);
+    }
+    if (filters?.override?.not_in) {
+      available &&= this.activeOverride == null || !filters.override.not_in.includes(this.activeOverride);
     }
 
-    if (buttonFilters.override.in) {
-      available &&= this.activeOverride != null && buttonFilters.override.in.includes(this.activeOverride);
+    if (filters?.stage?.in) {
+      available &&= this.currentStage != null && filters.stage.in.includes(this.currentStage);
     }
-    if (buttonFilters.override.not_in) {
-      available &&= this.activeOverride == null || !buttonFilters.override.not_in.includes(this.activeOverride);
-    }
-
-    if (buttonFilters.debug) {
-      console.log("available", available);
+    if (filters?.stage?.not_in) {
+      available &&= this.currentStage == null || !filters.stage.not_in.includes(this.currentStage);
     }
 
     return available;

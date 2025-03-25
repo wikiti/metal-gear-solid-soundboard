@@ -13,7 +13,7 @@ function SfxButtons({ sfxList }) {
         if (!sfx.show_if) return true;
         
         // Otherwise use our filtering service
-        return audioService.isSfxAvailable(sfx.show_if);
+        return audioService.isAudioAvaible(sfx.show_if);
       });
 
       setVisibleButtons(filtered);
