@@ -18,3 +18,12 @@
 .sfx-button:hover {
   background-color: #27ae60;
 }
+
+.sfx-buttons-wrapper[open] {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.sfx-buttons-wrapper[open] summary {
+  margin-bottom: 0.5rem;
+}

@@ -112,6 +112,87 @@
         "id": "sound-guard-whos-that",
         "src": "https://www.myinstants.com/media/sounds/guard-whos-that_x8gyPDo.mp3",
         "preload": true
+      },
+      {
+        "id": "sound-damage-snake",
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-snake.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-damage-gray-fox",
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-gray-fox.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-damage-meryl",
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-meryl.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-damage-otacon",
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-otacon.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-camera-alert",
+        "src": "https://www.myinstants.com/media/sounds/mgs-alert-camera.mp3",
+        "volume": 0.6,
+        "preload": true
+      },
+      {
+        "id": "sound-ration",
+        "src": "https://www.myinstants.com/media/sounds/mgs-rations.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-pick-up-item",
+        "src": "https://www.myinstants.com/media/sounds/mgs-pick-up-item.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-elevator",
+        "src": "https://www.myinstants.com/media/sounds/mgs-elevator2.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-door-open",
+        "src": "https://www.myinstants.com/media/sounds/mgs-door-open.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-grenade",
+        "src": "https://www.myinstants.com/media/sounds/mgs-grenade.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-grenade-chaff",
+        "src": "https://www.myinstants.com/media/sounds/mgs-grenade-chaff.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-explosion",
+        "src": "https://www.myinstants.com/media/sounds/mgs-explosion.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-fa-mas",
+        "src": "https://www.myinstants.com/media/sounds/mgs-fa-mas.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-socom-silenced",
+        "src": "https://www.myinstants.com/media/sounds/mgs-socom-silenced.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-socom",
+        "src": "https://www.myinstants.com/media/sounds/mgs-socom.mp3",
+        "preload": true
+      },
+      {
+        "id": "sound-silent-takedown",
+        "src": "https://www.myinstants.com/media/sounds/mgs-silent-takedown.mp3",
+        "preload": true
       }
     ]
   },
@@ -152,11 +233,12 @@
           "delay": 0
         },
         {
-          "comment": "TODO: Add a siren sfx here"
+          "id": "music-encounter",
+          "delay": 0.6
         },
         {
-          "id": "music-encounter",
-          "delay": 0.3
+          "id": "sound-camera-alert",
+          "delay": 1.2
         }
       ]
     },
@@ -200,7 +282,7 @@
   "sfx": [
     {
       "id": "sfx-codec",
-      "category": "Interaction",
+      "category": "interaction",
       "label": "📞 Codec",
       "play": [
         {
@@ -211,7 +293,7 @@
     },
     {
       "id": "sfx-knock",
-      "category": "Interaction",
+      "category": "interaction",
       "label": "👊🧱 Wall knock",
       "play": [
         {
@@ -222,7 +304,7 @@
     },
     {
       "id": "sfx-punch-ko-x1",
-      "category": "Combat",
+      "category": "combat",
       "label": "👊 KO x1",
       "play": [
         {
@@ -233,7 +315,7 @@
     },
     {
       "id": "sfx-ko-x2",
-      "category": "Combat",
+      "category": "combat",
       "label": "👊✨ KO x2",
       "play": [
         {
@@ -244,7 +326,7 @@
     },
     {
       "id": "sfx-alert",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️❗",
       "show_if": {
         "override": { "in": ["override-alert"] }
@@ -258,7 +340,7 @@
     },
     {
       "id": "sfx-guard-return-to-your-positions",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️🔊 Return to your positions",
       "show_if": {
         "override": { "not_in": ["override-alert"] }
@@ -272,7 +354,7 @@
     },
     {
       "id": "sfx-guard-what-was-that-noise",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️❔ What was that noise?",
       "show_if": {
         "override": { "not_in": ["override-alert"] }
@@ -286,7 +368,7 @@
     },
     {
       "id": "sfx-guard-i-heard-something",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮❔‍ I heard something",
       "show_if": {
         "override": { "not_in": ["override-alert"] }
@@ -300,7 +382,7 @@
     },
     {
       "id": "sfx-guard-eat-this",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️❗ Eat this!",
       "show_if": {
         "override": { "in": ["override-alert"] }
@@ -314,7 +396,7 @@
     },
     {
       "id": "sfx-guard-there-he-is",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️❗🔊 There he is!",
       "show_if": {
         "override": { "in": ["override-alert"] }
@@ -328,7 +410,7 @@
     },
     {
       "id": "sfx-guard-this-way",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️❗🔊 This way!",
       "show_if": {
         "override": { "in": ["override-alert"] }
@@ -342,7 +424,7 @@
     },
     {
       "id": "sfx-guard-whats-that",
-      "category": "Guards",
+      "category": "guards",
       "label": "👮‍♂️❔ What's that?",
       "show_if": {
         "override": { "not_in": ["override-alert"] }
@@ -356,7 +438,7 @@
     },
     {
       "id": "sfx-guard-whered-he-go",
-      "category": "Guards",
+      "category": "guards",
       "show_if": {
         "override": { "in": ["override-alert"] }
       },
@@ -370,6 +452,7 @@
     },
     {
       "id": "sfx-guard-whos-that",
+      "category": "guards",
       "label": "👮‍♂️❗ Who's that?",
       "show_if": {
         "override": { "in": ["override-alert"] }
@@ -377,6 +460,185 @@
       "play": [
         {
           "id": "sound-guard-whos-that",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-damage-snake",
+      "category": "damage",
+      "label": "🐍💥 Snake takes damage",
+      "play": [
+        {
+          "id": "sound-damage-snake",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-damage-gray-fox",
+      "category": "damage",
+      "label": "🤖💥 Gray Fox takes damage",
+      "play": [
+        {
+          "id": "sound-damage-gray-fox",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-damage-meryl",
+      "category": "damage",
+      "label": "👩‍🦰💥 Meryl takes damage",
+      "play": [
+        {
+          "id": "sound-damage-meryl",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-damage-otacon",
+      "category": "damage",
+      "label": "👓💥 Otacon takes damage",
+      "play": [
+        {
+          "id": "sound-damage-otacon",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-camera-alert",
+      "category": "guards",
+      "label": "📸❗ Camera alert",
+      "show_if": {
+        "override": { "in": ["override-alert"] }
+      },
+      "play": [
+        {
+          "id": "sound-camera-alert",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-ration",
+      "category": "interaction",
+      "label": "🍴 Ration used",
+      "play": [
+        {
+          "id": "sound-ration",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-pick-up-item",
+      "category": "interaction",
+      "label": "🎒 Pick up item",
+      "play": [
+        {
+          "id": "sound-pick-up-item",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-elevator",
+      "category": "interaction",
+      "label": "🚪↕ Elevator sound",
+      "play": [
+        {
+          "id": "sound-elevator",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-door-open",
+      "category": "interaction",
+      "label": "🚪 Door opens",
+      "play": [
+        {
+          "id": "sound-door-open",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-grenade",
+      "category": "combat",
+      "label": "💣 Grenade explosion",
+      "play": [
+        {
+          "id": "sound-grenade",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-grenade-chaff",
+      "category": "combat",
+      "label": "💣 Chaff grenade",
+      "play": [
+        {
+          "id": "sound-grenade-chaff",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-explosion",
+      "category": "combat",
+      "label": "💥 Explosion",
+      "play": [
+        {
+          "id": "sound-explosion",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-fa-mas",
+      "category": "combat",
+      "label": "🔫 FA-MAS fire",
+      "play": [
+        {
+          "id": "sound-fa-mas",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-socom-silenced",
+      "category": "combat",
+      "label": "🔫🔇 SOCOM (silenced)",
+      "play": [
+        {
+          "id": "sound-socom-silenced",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-socom",
+      "category": "combat",
+      "label": "🔫 SOCOM fire",
+      "play": [
+        {
+          "id": "sound-socom",
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "id": "sfx-silent-takedown",
+      "category": "combat",
+      "label": "🤫 Silent takedown",
+      "play": [
+        {
+          "id": "sound-silent-takedown",
           "delay": 0
         }
       ]
