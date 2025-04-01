@@ -93,6 +93,8 @@ class AudioService {
           this.intervals.push(loopInterval);
         }
       });
+
+      this.sounds[item.id].meta = { type: 'music' };
     });
     
     // Load sound effects (no loop)
@@ -107,6 +109,8 @@ class AudioService {
           this.emitError({ type: 'sound', ...item });
         }
       });
+
+      this.sounds[item.id].meta = { type: 'sound' };
     });
   }
 
@@ -176,7 +180,7 @@ class AudioService {
   stopAllMusic() {
     // Stop all music tracks (not sound effects)
     Object.values(this.sounds).forEach(sound => {
-      if (sound.loop()) {
+      if (sound.meta.type === 'music') {
         sound.stop();
       }
     });
