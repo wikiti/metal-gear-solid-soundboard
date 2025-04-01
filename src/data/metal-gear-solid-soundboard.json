@@ -35,6 +35,13 @@
         "id": "music-intruder-2",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/07.%20Intruder%202.mp3",
         "volume": 0.5
+      },
+      {
+        "id": "music-vr-training",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/19.%20VR%20Training.mp3",
+        "volume": 0.5,
+        "loop_start": 9.51,
+        "loop_end": 136.15
       }
     ],
     "sounds": [
@@ -221,6 +228,11 @@
       "id": "stage-boss",
       "label": "Boss",
       "music": "music-duel"
+    },
+    {
+      "id": "stage-vr",
+      "label": "VR Training",
+      "music": "music-vr-training"
     }
   ],
   "stage-overrides": [

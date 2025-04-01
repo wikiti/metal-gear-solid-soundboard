@@ -6,6 +6,7 @@ class AudioService {
     this.currentStage = null;
     this.previousStage = null;
     this.timeouts = [];
+    this.intervals = [];
     this.activeOverride = null;
     
     // Volume control properties
@@ -64,14 +65,32 @@ class AudioService {
   loadSounds(soundData) {
     // Load music tracks (with loop enabled)
     soundData.sources.music.forEach(item => {
+      const customLoop = !!(item.loop_start != null || item.loop_end != null);
+
       this.sounds[item.id] = new Howl({
         src: [item.src],
-        loop: true,
+        loop: customLoop,
         preload: item.preload || false,
         html5: true,
         volume: item.volume != null ? item.volume : 1.0,
         onloaderror: () => {
           this.emitError({ type: 'music', ...item });
+        },
+        onplay: () => {
+          if (!customLoop) {
+            return;
+          }
+
+          const music = this.sounds[item.id];
+          this.clearIntervals();
+
+          const loopInterval = setInterval(() => {
+            if (music.seek() >= item.loop_end) {
+              music.seek(item.loop_start);
+            }
+          }, 10);
+
+          this.intervals.push(loopInterval);
         }
       });
     });
@@ -161,11 +180,18 @@ class AudioService {
         sound.stop();
       }
     });
+
+    this.clearIntervals();
   }
 
   clearTimeouts() {
     this.timeouts.forEach(timeout => clearTimeout(timeout));
     this.timeouts = [];
+  }
+
+  clearIntervals() {
+    this.intervals.forEach(interval => clearInterval(interval));
+    this.intervals = [];
   }
 
   // New method to check if buttons should be shown based on filters
