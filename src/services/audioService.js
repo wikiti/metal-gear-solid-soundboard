@@ -69,7 +69,7 @@ class AudioService {
 
       this.sounds[item.id] = new Howl({
         src: [item.src],
-        loop: customLoop,
+        loop: !customLoop,
         preload: item.preload || false,
         html5: true,
         volume: item.volume != null ? item.volume : 1.0,
