@@ -62,83 +62,68 @@
       },
       {
         "id": "sound-knock",
-        "src": "https://www.myinstants.com/media/sounds/mgs-knock-a.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-knock-a.mp3"
       },
       {
         "id": "sound-punch-ko-x1",
-        "src": "https://www.myinstants.com/media/sounds/punch-guard-kox1.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/punch-guard-kox1.mp3"
       },
       {
         "id": "sound-ko-x2",
-        "src": "https://www.myinstants.com/media/sounds/knock-out-guard-kox2.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/knock-out-guard-kox2.mp3"
       },
       {
         "id": "sound-guard-return-to-your-positions",
-        "src": "https://www.myinstants.com/media/sounds/guard-return-to-your-positions_9aocsFp.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-return-to-your-positions_9aocsFp.mp3"
       },
       {
         "id": "sound-guard-what-was-that-noise",
-        "src": "https://www.myinstants.com/media/sounds/guard-what-was-that-noise_IVtXtq7.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-what-was-that-noise_IVtXtq7.mp3"
       },
       {
         "id": "sound-guard-i-heard-something",
-        "src": "https://www.myinstants.com/media/sounds/guard-i-heard-something_SP0Q6Fw.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-i-heard-something_SP0Q6Fw.mp3"
       },
       {
         "id": "sound-guard-eat-this",
-        "src": "https://www.myinstants.com/media/sounds/guard-eat-this_r8zo9ce.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-eat-this_r8zo9ce.mp3"
       },
       {
         "id": "sound-guard-there-he-is",
-        "src": "https://www.myinstants.com/media/sounds/guard-there-he-is_JHZ7rPO.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-there-he-is_JHZ7rPO.mp3"
       },
       {
         "id": "sound-guard-this-way",
-        "src": "https://www.myinstants.com/media/sounds/guard-this-way_dYsTCuS.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-this-way_dYsTCuS.mp3"
       },
       {
         "id": "sound-guard-whats-that",
-        "src": "https://www.myinstants.com/media/sounds/guard-whats-that_8vgwEbf.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-whats-that_8vgwEbf.mp3"
       },
       {
         "id": "sound-guard-whered-he-go",
-        "src": "https://www.myinstants.com/media/sounds/guard-whered-he-go_zHLpH97.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-whered-he-go_zHLpH97.mp3"
       },
       {
         "id": "sound-guard-whos-that",
-        "src": "https://www.myinstants.com/media/sounds/guard-whos-that_x8gyPDo.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/guard-whos-that_x8gyPDo.mp3"
       },
       {
         "id": "sound-damage-snake",
-        "src": "https://www.myinstants.com/media/sounds/mgs-damage-snake.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-snake.mp3"
       },
       {
         "id": "sound-damage-gray-fox",
-        "src": "https://www.myinstants.com/media/sounds/mgs-damage-gray-fox.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-gray-fox.mp3"
       },
       {
         "id": "sound-damage-meryl",
-        "src": "https://www.myinstants.com/media/sounds/mgs-damage-meryl.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-damage-meryl.mp3"
       },
       {
         "id": "sound-damage-otacon",
         "src": "https://www.myinstants.com/media/sounds/mgs-damage-otacon.mp3",
-        "preload": true
+        "volume": 0.5
       },
       {
         "id": "sound-camera-alert",
@@ -148,58 +133,51 @@
       },
       {
         "id": "sound-ration",
-        "src": "https://www.myinstants.com/media/sounds/mgs-rations.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-rations.mp3"
       },
       {
         "id": "sound-pick-up-item",
-        "src": "https://www.myinstants.com/media/sounds/mgs-pick-up-item.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-pick-up-item.mp3"
       },
       {
         "id": "sound-elevator",
-        "src": "https://www.myinstants.com/media/sounds/mgs-elevator2.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-elevator2.mp3"
       },
       {
         "id": "sound-door-open",
-        "src": "https://www.myinstants.com/media/sounds/mgs-door-open.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-door-open.mp3"
       },
       {
         "id": "sound-grenade",
-        "src": "https://www.myinstants.com/media/sounds/mgs-grenade.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-grenade.mp3"
       },
       {
         "id": "sound-grenade-chaff",
-        "src": "https://www.myinstants.com/media/sounds/mgs-grenade-chaff.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-grenade-chaff.mp3"
       },
       {
         "id": "sound-explosion",
-        "src": "https://www.myinstants.com/media/sounds/mgs-explosion.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-explosion.mp3"
       },
       {
         "id": "sound-fa-mas",
-        "src": "https://www.myinstants.com/media/sounds/mgs-fa-mas.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-fa-mas.mp3"
       },
       {
         "id": "sound-socom-silenced",
-        "src": "https://www.myinstants.com/media/sounds/mgs-socom-silenced.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-socom-silenced.mp3"
       },
       {
         "id": "sound-socom",
-        "src": "https://www.myinstants.com/media/sounds/mgs-socom.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-socom.mp3"
       },
       {
         "id": "sound-silent-takedown",
-        "src": "https://www.myinstants.com/media/sounds/mgs-silent-takedown.mp3",
-        "preload": true
+        "src": "https://www.myinstants.com/media/sounds/mgs-silent-takedown.mp3"
+      },
+      {
+        "id": "sound-impressive-snake",
+        "src": "https://www.myinstants.com/media/sounds/metal-gear-solid-impressive-snake.mp3"
       }
     ]
   },
@@ -288,6 +266,19 @@
       ],
       "show_if": {
         "stage": { "in": ["stage-3"] }
+      }
+    },
+    {
+      "id": "override-vr-stage-completed",
+      "label": "✅ Stage completed",
+      "play": [
+        {
+          "id": "sound-impressive-snake",
+          "delay": 0
+        }
+      ],
+      "show_if": {
+        "stage": { "in": ["stage-vr"] }
       }
     }
   ],
