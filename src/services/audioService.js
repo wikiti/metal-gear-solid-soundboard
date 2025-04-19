@@ -4,7 +4,6 @@ class AudioService {
   constructor() {
     this.sounds = {};
     this.currentStage = null;
-    this.previousStage = null;
     this.timeouts = [];
     this.intervals = [];
     this.activeOverride = null;
@@ -16,6 +15,9 @@ class AudioService {
     
     // For error handling
     this.errorListeners = [];
+    
+    // For playing override listeners
+    this.overrideUpdateListeners = [];
     
     // Initialize Howler master volume
     this.applyMasterVolume();
@@ -29,10 +31,21 @@ class AudioService {
     };
   }
 
+  onOverrideUpdate(listener) {
+    this.overrideUpdateListeners.push(listener);
+    return () => {
+      this.overrideUpdateListeners = this.overrideUpdateListeners.filter(l => l !== listener);
+    };
+  }
+
   // Notify all listeners about an error
   emitError(error) {
     console.error(`Failed to load audio source '${error.id}'`, error);
     this.errorListeners.forEach(listener => listener(error));
+  }
+
+  emitOverrideUpdate(override) {
+    this.overrideUpdateListeners.forEach(listener => listener(override));
   }
 
   // Apply the current volume setting to Howler global volume
@@ -114,28 +127,41 @@ class AudioService {
     });
   }
 
-  playStage(stageId, stages) {
+  playStage(stageId, stages, resume = false) {
     // Find the stage
     const stage = stages.find(s => s.id === stageId);
     if (!stage || !stage.music) return;
 
-    // Stop current music if any
     this.stopAllMusic();
-    
+
     // Save previous and current stage
-    this.previousStage = this.currentStage;
-    this.currentStage = stageId;
-    
+    this.currentStage = stage;
+
     // Clear any active override
     this.activeOverride = null;
-    
+
     // Play the stage music
-    if (this.sounds[stage.music]) {
-      this.sounds[stage.music].play();
+    const music = this.sounds[stage.music];
+    if (music) {
+      if (resume) {
+        // Resume the previous stage if applicable
+        music.seek(music.meta.paused_at || 0);
+      }
+
+      music.play();
+      music.meta.paused_at = null;
     }
+
+    this.emitOverrideUpdate(null);
   }
 
   playOverride(override) {
+    // Keep track of pause timestamp
+    if (this.currentStage) {
+      const music = this.sounds[this.currentStage.music];
+      music.meta.paused_at = music.seek();
+    }
+
     // Stop current music and clear any pending sounds
     this.stopAllMusic();
     this.clearTimeouts();
@@ -156,7 +182,9 @@ class AudioService {
       }, sound.delay * 1000);
       this.timeouts.push(timeout);
     });
-    
+
+    this.emitOverrideUpdate(override);
+
     // If there's a natural end to this override sequence, clear it
     // For now we'll assume the override stays active until manually cleared
   }
@@ -171,9 +199,9 @@ class AudioService {
     });
   }
 
-  resumePreviousStage(stages) {
-    if (this.previousStage) {
-      this.playStage(this.previousStage, stages);
+  resumeStage(stages) {
+    if (this.currentStage) {
+      this.playStage(this.currentStage.id, stages, true);
     }
   }
 

@@ -14,6 +14,7 @@ function App() {
   const [error, setError] = useState(null);
   const [selectedStage, setSelectedStage] = useState('');
   const [soundErrors, setSoundErrors] = useState([]);
+  const [isOverrideActive, setIsOverrideActive] = useState(false);
 
   useEffect(() => {
     // Register error listener
@@ -39,6 +40,14 @@ function App() {
     }
 
     // Cleanup error listener on unmount
+    return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = audioService.onOverrideUpdate(override => {
+      setIsOverrideActive(override !== null);
+    });
+
     return unsubscribe;
   }, []);
 
@@ -86,15 +95,23 @@ function App() {
         <h2>Stage</h2>
         <StageSelector stages={soundboardData.stages} selectedStage={selectedStage} setSelectedStage={setSelectedStage} />
         <button 
-          className="resume-button"
+          className="restart-button"
           onClick={() => audioService.playStage(selectedStage, soundboardData.stages)}
         >
           Restart
         </button>
+        {isOverrideActive && (
+          <button
+            className="resume-button"
+            onClick={() => audioService.resumeStage(soundboardData.stages)}
+          >
+            Resume
+          </button>
+        )}
       </div>
       
       <div className="override-section">
-        <h2>Triggers</h2>
+        <h2>Events</h2>
         <OverrideButtons overrides={soundboardData['stage-overrides']} />
       </div>
       

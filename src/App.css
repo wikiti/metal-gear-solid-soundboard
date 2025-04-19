@@ -27,7 +27,7 @@ h2 {
   padding-bottom: 10px;
 }
 
-.resume-button {
+.resume-button, .restart-button {
   margin-top: 10px;
   padding: 8px 16px;
   background-color: #4a90e2;
@@ -37,8 +37,12 @@ h2 {
   cursor: pointer;
 }
 
-.resume-button:hover {
+.resume-button:hover, .restart-button:hover {
   background-color: #3a80d2;
+}
+
+.resume-button {
+  margin-left: 0.5rem;
 }
 
 .loading, .error {
