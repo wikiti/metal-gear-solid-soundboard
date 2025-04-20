@@ -230,7 +230,10 @@
           "id": "sound-camera-alert",
           "delay": 1.2
         }
-      ]
+      ],
+      "show_if": {
+        "stage": { "not_in": ["stage-boss"] }
+      }
     },
     {
       "id": "override-gameover",

@@ -240,10 +240,10 @@ class AudioService {
     }
 
     if (filters?.stage?.in) {
-      available &&= this.currentStage != null && filters.stage.in.includes(this.currentStage);
+      available &&= this.currentStage != null && filters.stage.in.includes(this.currentStage.id);
     }
     if (filters?.stage?.not_in) {
-      available &&= this.currentStage == null || !filters.stage.not_in.includes(this.currentStage);
+      available &&= this.currentStage == null || !filters.stage.not_in.includes(this.currentStage.id);
     }
 
     return available;
