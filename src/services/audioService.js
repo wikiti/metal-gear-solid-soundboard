@@ -84,7 +84,7 @@ class AudioService {
         src: [item.src],
         loop: !customLoop,
         preload: item.preload || false,
-        html5: true,
+        html5: false,
         volume: item.volume != null ? item.volume : 1.0,
         onloaderror: () => {
           this.emitError({ type: 'music', ...item });
