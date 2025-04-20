@@ -14,7 +14,8 @@
       {
         "id": "music-encounter",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/06.%20Encounter.mp3",
-        "volume": 0.5
+        "volume": 0.5,
+        "preload": true
       },
       {
         "id": "music-wind",
@@ -46,15 +47,18 @@
     "sounds": [
       {
         "id": "sound-alert",
-        "src": "https://www.myinstants.com/media/sounds/tindeck_1.mp3"
+        "src": "https://www.myinstants.com/media/sounds/tindeck_1.mp3",
+        "preload": true
       },
       {
         "id": "sound-codec",
-        "src": "https://www.myinstants.com/media/sounds/codec.mp3"
+        "src": "https://www.myinstants.com/media/sounds/codec.mp3",
+        "preload": true
       },
       {
         "id": "sound-gameover",
-        "src": "https://www.myinstants.com/media/sounds/snake-dies-with-game-over.mp3"
+        "src": "https://www.myinstants.com/media/sounds/snake-dies-with-game-over.mp3",
+        "preload": true
       },
       {
         "id": "sound-knock",
@@ -124,7 +128,8 @@
       {
         "id": "sound-camera-alert",
         "src": "https://www.myinstants.com/media/sounds/mgs-alert-camera.mp3",
-        "volume": 0.6
+        "volume": 0.6,
+        "preload": true
       },
       {
         "id": "sound-ration",
