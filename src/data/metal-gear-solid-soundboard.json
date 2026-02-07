@@ -2,46 +2,75 @@
   "sources": {
     "music": [
       {
-        "id": "music-introduction",
+        "id": "music-setup",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/02.%20Introduction.mp3",
-        "volume": 0.5
+        "volume": 0.25
       },
       {
-        "id": "music-cavern",
+        "id": "music-stage1and9",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/04.%20Cavern.mp3",
-        "volume": 0.5
+        "volume": 0.25
+      },
+      {
+        "id": "music-stage2",
+        "src": "./music/wind.mp3"
+      },
+      {
+        "id": "music-stage3holdingcell",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/05.%20Intruder%201.mp3",
+        "volume": 0.25
+      },
+      {
+        "id": "music-stage3armory",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/07.%20Intruder%202.mp3",
+        "volume": 0.25
+      },
+      {
+        "id": "music-stage6",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/08.%20Warhead%20Storage.mp3",
+        "volume": 0.25,
+        "start_time": 10.0,
+        "loop_start": 42.0,
+        "loop_end": 206.15
+      },
+      {
+        "id": "music-stage13heat",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/14.%20Blast%20Furnace.mp3",
+        "volume": 0.25,
+        "loop_start": 42.0,
+        "loop_end": 159.0
+      },
+      {
+        "id": "music-stage13cold",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/15.%20Colosseo.mp3",
+        "volume": 0.25,
+        "loop_start": 7.0,
+        "loop_end": 98.0
+      },
+      {
+        "id": "music-stage13rex",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/16.%20REX's%20Lair.mp3",
+        "volume": 0.25,
+        "loop_start": 6.0,
+        "loop_end": 172.0
+      },
+      {
+        "id": "music-boss",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/12.%20Duel.mp3",
+        "volume": 0.25
+      },
+      {
+        "id": "music-vr",
+        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/19.%20VR%20Training.mp3",
+        "volume": 0.25,
+        "loop_start": 9.51,
+        "loop_end": 136.15
       },
       {
         "id": "music-encounter",
         "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/06.%20Encounter.mp3",
-        "volume": 0.5,
+        "volume": 0.25,
         "preload": true
-      },
-      {
-        "id": "music-wind",
-        "src": "./music/wind.mp3"
-      },
-      {
-        "id": "music-duel",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/12.%20Duel.mp3",
-        "volume": 0.5
-      },
-      {
-        "id": "music-intruder-1",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/05.%20Intruder%201.mp3",
-        "volume": 0.5
-      },
-      {
-        "id": "music-intruder-2",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/07.%20Intruder%202.mp3",
-        "volume": 0.5
-      },
-      {
-        "id": "music-vr-training",
-        "src": "https://archive.org/download/metal-gear-solid-original-game-soundtrack/19.%20VR%20Training.mp3",
-        "volume": 0.5,
-        "loop_start": 9.51,
-        "loop_end": 136.15
       }
     ],
     "sounds": [
@@ -184,33 +213,82 @@
   "stages": [
     {
       "id": "stage-setup",
-      "label": "Stage setup",
-      "music": "music-introduction"
-    },
-    {
-      "id": "stage-1",
-      "label": "Stage 1 - Dock",
-      "music": "music-cavern"
-    },
-    {
-      "id": "stage-2",
-      "label": "Stage 2 - Heliport",
-      "music": "music-wind"
-    },
-    {
-      "id": "stage-3",
-      "label": "Stage 3 - Holding Cells",
-      "music": "music-intruder-1"
-    },
-    {
-      "id": "stage-boss",
-      "label": "Boss",
-      "music": "music-duel"
+      "label": "Stage Setup",
+      "music": "music-setup"
     },
     {
       "id": "stage-vr",
-      "label": "VR Training",
-      "music": "music-vr-training"
+      "label": "VR Stage", "music": "music-vr"
+    },
+    {
+      "id": "stage-1",
+      "label": "Stage 1",
+      "music": "music-stage1and9"
+    },
+    {
+      "id": "stage-2",
+      "label": "Stage 2",
+      "music": "music-stage2"
+    },
+    {
+      "id": "stage-3",
+      "label": "Stage 3",
+      "music": "music-stage3holdingcell"
+    },
+    {
+      "id": "stage-4",
+      "label": "Stage 4",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-5",
+      "label": "Stage 5",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-6",
+      "label": "Stage 6",
+      "music": "music-stage6"
+    },
+    {
+      "id": "stage-7",
+      "label": "Stage 7",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-8",
+      "label": "Stage 8",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-9",
+      "label": "Stage 9",
+      "music": "music-stage1and9"
+    },
+    {
+      "id": "stage-10",
+      "label": "Stage 10",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-11",
+      "label": "Stage 11",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-12",
+      "label": "Stage 12",
+      "music": "music-boss"
+    },
+    {
+      "id": "stage-13",
+      "label": "Stage 13",
+      "music": "music-stage13heat"
+    },
+    {
+      "id": "stage-14",
+      "label": "Stage 14",
+      "music": "music-boss"
     }
   ],
   "stage-overrides": [
@@ -246,11 +324,11 @@
       ]
     },
     {
-      "id": "override-board-5a",
-      "label": "🔊 5A - Holding Cells",
+      "id": "override-Stage3-HoldingCell",
+      "label": "🎵 Holding Cell",
       "play": [
         {
-          "id": "music-intruder-1",
+          "id": "music-stage3holdingcell",
           "delay": 0
         }
       ],
@@ -259,17 +337,35 @@
       }
     },
     {
-      "id": "override-board-6a",
-      "label": "🔊 6A - Armory",
+      "id": "override-Stage3-Armory",
+      "label": "🎵 Armory",
       "play": [
         {
-          "id": "music-intruder-2",
+          "id": "music-stage3armory",
           "delay": 0
         }
       ],
       "show_if": {
         "stage": { "in": ["stage-3"] }
       }
+    },
+    {
+      "id": "override-Stage13-Heat",
+      "label": "🎵 Blast Furnace",
+      "play": [{ "id": "music-stage13heat", "delay": 0 }],
+      "show_if": { "stage": { "in": ["stage-13"] } }
+    },
+    {
+      "id": "override-Stage13-Cold",
+      "label": "🎵 Warehouse",
+      "play": [{ "id": "music-stage13cold", "delay": 0 }],
+      "show_if": { "stage": { "in": ["stage-13"] } }
+    },
+    {
+      "id": "override-Stage13-Rex",
+      "label": "🎵 Rex's Lair",
+      "play": [{ "id": "music-stage13rex", "delay": 0 }],
+      "show_if": { "stage": { "in": ["stage-13"] } }
     },
     {
       "id": "override-vr-stage-completed",
@@ -630,7 +726,7 @@
     {
       "id": "sfx-socom",
       "category": "combat",
-      "label": "🔫 SOCOM fire",
+      "label": "🔫 SOCOM",
       "play": [
         {
           "id": "sound-socom",
